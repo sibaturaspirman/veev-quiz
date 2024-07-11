@@ -126,9 +126,9 @@ export default function Home() {
 
       {/* PAGE BELAKANG */}
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageBelakang ? 'opacity-0 pointer-events-none' : ''}`}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
+        </Link>
         <div className="w-[45%] relative mx-auto mt-8 flex justify-center items-center">
           <Image src='/thanks1.png' width={715} height={224} alt='Zirolu' className='w-full' priority />
         </div>
@@ -144,10 +144,10 @@ export default function Home() {
       {/* PAGE QUESTION */}
       {/* --Q1-- */}
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageQ1 ? 'opacity-0 pointer-events-none' : ''}`}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
-        <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
+        </Link>
+        <div className="w-[90%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <h4 className="text-center font-bold text-4xl color-white mb-4">Question #1</h4>
           <div className="w-full rounded-xl lg p-10 bg-white/70">
             <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">How do you prefer to recharge after a long week?</h4>
@@ -179,10 +179,10 @@ export default function Home() {
 
       {/* --Q2-- */}
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageQ2 ? 'opacity-0 pointer-events-none' : ''}`}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
-        <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
+        </Link>
+        <div className="w-[90%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <h4 className="text-center font-bold text-4xl color-white mb-4">Question #2</h4>
           <div className="w-full rounded-xl lg p-10 bg-white/70">
             <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">Which environment makes you feel most at ease?</h4>
@@ -214,10 +214,10 @@ export default function Home() {
 
       {/* --Q3-- */}
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageQ3 ? 'opacity-0 pointer-events-none' : ''}`}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
-        <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
+        </Link>
+        <div className="w-[90%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <h4 className="text-center font-bold text-4xl color-white mb-4">Question #3</h4>
           <div className="w-full rounded-xl lg p-10 bg-white/70">
             <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">What&apos;s your approach to new experiences?</h4>
@@ -250,9 +250,9 @@ export default function Home() {
 
       {/* PAGE JAWABAN */}
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageJ1 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
+        </Link>
         <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <div className="w-full relative mx-auto flex justify-center items-center">
             <Image src='/preview1.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
@@ -261,9 +261,9 @@ export default function Home() {
       </div>
 
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageJ2 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
+        </Link>
         <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <div className="w-full relative mx-auto flex justify-center items-center">
             <Image src='/preview2.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
@@ -272,9 +272,9 @@ export default function Home() {
       </div>
 
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageJ3 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
-        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
           <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </div>
+        </Link>
         <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <div className="w-full relative mx-auto flex justify-center items-center">
             <Image src='/preview3.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
