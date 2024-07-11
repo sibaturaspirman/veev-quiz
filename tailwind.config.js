@@ -15,7 +15,7 @@ module.exports = {
     },
     animation: {
       upDownCepet: "upDownCepet 400ms ease infinite alternate",
-      upDown: "upDown 2700ms ease infinite alternate",
+      upDown: "upDown 700ms linear infinite ",
       upDown2: "upDown2 2100ms ease infinite alternate",
       upDown3: "upDown 3700ms ease infinite alternate",
       loading1: "loading1 9000ms ease infinite",
@@ -39,8 +39,8 @@ module.exports = {
         "100%": { transform: "translateX(-89%)"},
       },
       upDown: {
-        "0%": { transform: "translateY(5%)" },
-        "100%": { transform: "translateY(-5%)" },
+        "0%": { transform: "rotate(0deg)" },
+        "100%": { transform: "rotate(360deg)" },
       },
       upDown2: {
         "0%": { transform: "translateY(-5%)" },
