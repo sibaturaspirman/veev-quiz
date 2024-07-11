@@ -220,7 +220,7 @@ export default function Home() {
         <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <h4 className="text-center font-bold text-4xl color-white mb-4">Question #3</h4>
           <div className="w-full rounded-xl lg p-10 bg-white/70">
-            <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">What's your approach to new experiences?</h4>
+            <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">What&apos;s your approach to new experiences?</h4>
             <div className="w-full">
               <ul className='choose4'>
                   <li className='mb-5' onClick={jawabQ3A}>
