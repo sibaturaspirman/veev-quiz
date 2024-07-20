@@ -7,6 +7,8 @@ import React,{ useEffect, useState, useRef } from 'react';
 export default function Home() {
   const [pageDepan, setPageDepan] = useState(false);
   const [pageBelakang, setPageBelakang] = useState(true);
+  const [pageDisclaimer, setPageDisclaimer] = useState(true);
+  const [disclaimer, setDisclaimer] = useState(true);
   const [pageQ1, setPageQ1] = useState(true);
   const [pageQ2, setPageQ2] = useState(true);
   const [pageQ3, setPageQ3] = useState(true);
@@ -19,7 +21,7 @@ export default function Home() {
 
   const startPageDepan = () => {
     setPageDepan(true)
-    setPageQ1(false)
+    setPageDisclaimer(false)
   }
 
   const jawabQ1A = () => {
@@ -100,6 +102,15 @@ export default function Home() {
     }
   }
 
+  const setupDisclaimer = () => {
+    setDisclaimer(false)
+  }
+
+  const startPageDisclaimer = () => {
+    setPageDisclaimer(true)
+    setPageQ1(false)
+  }
+
   const selesai = () => {
     setPageBelakang(false)
     setPageJ1(true)
@@ -116,23 +127,38 @@ export default function Home() {
     <div className="flex min-h-screen bg flex-col items-center justify-center pt-12 p-20">
       {/* PAGE DEPAN */}
       <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageDepan ? 'opacity-0 pointer-events-none' : ''}`} onClick={startPageDepan}>
-        <div className="w-[60%] relative mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
+        <div className="w-[80%] relative mx-auto flex justify-center items-center">
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
         </div>
-        <div className="w-[35%] relative mx-auto mt-8 flex justify-center items-center">
-          <Image src='/btn-start.png' width={731} height={240} alt='Zirolu' className='w-full' priority />
+        <div className="w-[45%] relative mx-auto mt-[15rem] flex justify-center items-center">
+          <Image src='/tap.png' width={471} height={52} alt='Zirolu' className='w-full' priority />
+        </div>
+      </div>
+      {/* PAGE DISCLAIMER */}
+      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageDisclaimer ? 'opacity-0 pointer-events-none' : ''}`}>
+        <div className="w-[80%] relative mx-auto flex justify-center items-center">
+          <div className={`w-full relative mx-auto flex justify-center items-center ${disclaimer ? '' : 'opacity-0 pointer-events-none'}`} onClick={setupDisclaimer}>
+            <Image src='/disclaimer.png' width={803} height={650} alt='Zirolu' className="w-full"/>
+          </div>
+          <div className={`w-full absolute top-0 left-0 w-full mx-auto flex justify-center items-center ${disclaimer ? 'opacity-0 pointer-events-none' : ''}`}>
+            <Image src='/disclaimerCheck.png' width={803} height={650} alt='Zirolu' className="w-full"/>
+          </div>
+        </div>
+        
+        <div className={`w-[35%] relative mx-auto mt-[4rem] flex justify-center items-center ${disclaimer ? 'opacity-0 pointer-events-none' : ''}`} onClick={startPageDisclaimer}>
+          <Image src='/btn-startNEW.png' width={356} height={120} alt='Zirolu' className='w-full' priority />
         </div>
       </div>
 
       {/* PAGE BELAKANG */}
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageBelakang ? 'opacity-0 pointer-events-none' : ''}`}>
+      <div className={`fixed top-0 left-0 bgBlur w-full h-full flex flex-col items-center justify-center ${pageBelakang ? 'opacity-0 pointer-events-none' : ''}`}>
         <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
         </Link>
-        <div className="w-[45%] relative mx-auto mt-8 flex justify-center items-center">
-          <Image src='/thanks1.png' width={715} height={224} alt='Zirolu' className='w-full' priority />
+        <div className="w-[75%] relative mx-auto mt-8 flex justify-center items-center">
+          <Image src='/thanksNEW.png' width={940} height={220} alt='Zirolu' className='w-full' priority />
         </div>
-        <div className="animate-upDown w-[25%] relative mx-auto mt-14 flex justify-center items-center">
+        <div className="animate-upDown w-[15%] relative mx-auto mt-14 flex justify-center items-center">
           <Image src='/loading.png' width={289} height={288} alt='Zirolu' className='w-full' priority />
         </div>
         <div className="w-[58%] relative mx-auto mt-14 flex justify-center items-center">
@@ -143,24 +169,24 @@ export default function Home() {
 
       {/* PAGE QUESTION */}
       {/* --Q1-- */}
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageQ1 ? 'opacity-0 pointer-events-none' : ''}`}>
+      <div className={`fixed top-0 left-0 bgBlur w-full h-full flex flex-col items-center justify-center ${pageQ1 ? 'opacity-0 pointer-events-none' : ''}`}>
         <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
         </Link>
-        <div className="w-[90%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
-          <h4 className="text-center font-bold text-4xl color-white mb-4">Question #1</h4>
-          <div className="w-full rounded-xl lg p-10 bg-white/70">
-            <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">How do you prefer to recharge after a long week?</h4>
+        <div className="w-[90%] absolute left-0 right-0 mx-auto flex flex-col justify-center items-center">
+          <h4 className="text-center uppercase text-2xl color-white mb-0">Question #1</h4>
+          <div className="w-full rounded-xl lg p-10 pt-3">
+            <h4 className="text-center font-bold text-4xl leading-snug mb-8">How do you prefer to recharge after a long week?</h4>
             <div className="w-full">
               <ul className='choose4'>
-                  <li className='mb-5' onClick={jawabQ1A}>
+                  <li className='mb-8' onClick={jawabQ1A}>
                       <input
                       id='q1'
                       type="radio"
                       name='q1'
                       value="A"
                       />
-                      <label htmlFor="q1" className='text-3xl'>By finding a queit spot to relax and unwind</label>
+                      <label htmlFor="q1" className='text-3xl'>A: By finding a queit spot to relax and unwind</label>
                   </li>
                   <li onClick={jawabQ1B}>
                       <input
@@ -169,7 +195,7 @@ export default function Home() {
                       name='q1'
                       value="B"
                       />
-                      <label htmlFor="q12" className='text-3xl'>By engaging in exciting activities and socializing</label>
+                      <label htmlFor="q12" className='text-3xl'>B: By engaging in exciting activities and socializing</label>
                   </li>
               </ul>
             </div>
@@ -178,24 +204,24 @@ export default function Home() {
       </div>
 
       {/* --Q2-- */}
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageQ2 ? 'opacity-0 pointer-events-none' : ''}`}>
+      <div className={`fixed top-0 left-0 bgBlur w-full h-full flex flex-col items-center justify-center ${pageQ2 ? 'opacity-0 pointer-events-none' : ''}`}>
         <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
         </Link>
-        <div className="w-[90%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
-          <h4 className="text-center font-bold text-4xl color-white mb-4">Question #2</h4>
-          <div className="w-full rounded-xl lg p-10 bg-white/70">
-            <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">Which environment makes you feel most at ease?</h4>
+        <div className="w-[90%] absolute left-0 right-0 mx-auto flex flex-col justify-center items-center">
+          <h4 className="text-center uppercase text-2xl color-white mb-0">Question #2</h4>
+          <div className="w-full rounded-xl lg p-10 pt-3">
+            <h4 className="text-center font-bold text-4xl leading-snug mb-8">Which environment makes you feel most at ease?</h4>
             <div className="w-full">
               <ul className='choose4'>
-                  <li className='mb-5' onClick={jawabQ2A}>
+                  <li className='mb-8' onClick={jawabQ2A}>
                       <input
                       id='q2'
                       type="radio"
                       name='q2'
                       value="A"
                       />
-                      <label htmlFor="q2" className='text-3xl'>A peaceful and natural setting, surrounded by nature</label>
+                      <label htmlFor="q2" className='text-3xl'>A: A peaceful and natural setting, surrounded by nature</label>
                   </li>
                   <li onClick={jawabQ2B}>
                       <input
@@ -204,7 +230,7 @@ export default function Home() {
                       name='q2'
                       value="B"
                       />
-                      <label htmlFor="q22" className='text-3xl'>A vibrant and dynamic setting with lots of energy</label>
+                      <label htmlFor="q22" className='text-3xl'>B: A vibrant and dynamic setting with lots of energy</label>
                   </li>
               </ul>
             </div>
@@ -213,24 +239,24 @@ export default function Home() {
       </div>
 
       {/* --Q3-- */}
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageQ3 ? 'opacity-0 pointer-events-none' : ''}`}>
+      <div className={`fixed top-0 left-0 bgBlur w-full h-full flex flex-col items-center justify-center ${pageQ3 ? 'opacity-0 pointer-events-none' : ''}`}>
         <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
         </Link>
-        <div className="w-[90%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
-          <h4 className="text-center font-bold text-4xl color-white mb-4">Question #3</h4>
-          <div className="w-full rounded-xl lg p-10 bg-white/70">
-            <h4 className="text-center font-bold text-4xl text-[#571571] mb-8">What&apos;s your approach to new experiences?</h4>
+        <div className="w-[90%] absolute left-0 right-0 mx-auto flex flex-col justify-center items-center">
+          <h4 className="text-center uppercase text-2xl color-white mb-0">Question #3</h4>
+          <div className="w-full rounded-xl lg p-10 pt-3">
+            <h4 className="text-center font-bold text-4xl leading-snug mb-8">What&apos;s your approach to new experiences?</h4>
             <div className="w-full">
               <ul className='choose4'>
-                  <li className='mb-5' onClick={jawabQ3A}>
+                  <li className='mb-8' onClick={jawabQ3A}>
                       <input
                       id='q3'
                       type="radio"
                       name='q3'
                       value="A"
                       />
-                      <label htmlFor="q3" className='text-3xl'>You take a calm, reflective approach and enjoy the journey</label>
+                      <label htmlFor="q3" className='text-3xl'>A : You take a calm, reflective approach and enjoy the journey</label>
                   </li>
                   <li onClick={jawabQ3B}>
                       <input
@@ -239,7 +265,7 @@ export default function Home() {
                       name='q3'
                       value="B"
                       />
-                      <label htmlFor="q32" className='text-3xl'>You dive right in and seek out of the thrill of discovery</label>
+                      <label htmlFor="q32" className='text-3xl'>B : You dive right in and seek out of the thrill of discovery</label>
                   </li>
               </ul>
             </div>
@@ -249,35 +275,44 @@ export default function Home() {
       {/* !PAGE QUESTION */}
 
       {/* PAGE JAWABAN */}
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageJ1 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
-        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </Link>
-        <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
+      <div className={`fixed top-0 left-0 bg1 w-full h-full flex flex-col items-center justify-center ${pageJ1 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
+        <div className="w-[40px] absolute top-10 left-10 mx-auto flex justify-center items-center">
+          <Image src='/close.png' width={80} height={80} alt='Zirolu' className='w-full' priority />
+        </div>
+        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
+        </div>
+        <div className="w-[85%] absolute bottom-0 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <div className="w-full relative mx-auto flex justify-center items-center">
-            <Image src='/preview1.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
+            <Image src='/preview1NEW.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
           </div>
         </div>
       </div>
 
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageJ2 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
-        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </Link>
-        <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
+      <div className={`fixed top-0 left-0 bg2 w-full h-full flex flex-col items-center justify-center ${pageJ2 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
+        <div className="w-[40px] absolute top-10 left-10 mx-auto flex justify-center items-center">
+          <Image src='/close2.png' width={80} height={80} alt='Zirolu' className='w-full' priority />
+        </div>
+        <div className="w-[48%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+          <Image src='/logoDark.png' width={284} height={71} alt='Zirolu' className='w-full' priority />
+        </div>
+        <div className="w-[85%] absolute bottom-0 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <div className="w-full relative mx-auto flex justify-center items-center">
-            <Image src='/preview2.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
+            <Image src='/preview2NEW.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
           </div>
         </div>
       </div>
 
-      <div className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center ${pageJ3 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
-        <Link href='/' className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
-          <Image src='/logo.png' width={734} height={320} alt='Zirolu' className='w-full' priority />
-        </Link>
-        <div className="w-[70%] absolute bottom-10 left-0 right-0 mx-auto flex flex-col justify-center items-center">
+      <div className={`fixed top-0 left-0 bg3 w-full h-full flex flex-col items-center justify-center ${pageJ3 ? 'opacity-0 pointer-events-none' : ''}`} onClick={selesai}>
+        <div className="w-[40px] absolute top-10 left-10 mx-auto flex justify-center items-center">
+          <Image src='/close.png' width={80} height={80} alt='Zirolu' className='w-full' priority />
+        </div>
+        <div className="w-[60%] absolute top-10 left-0 right-0 mx-auto flex justify-center items-center">
+          <Image src='/logoNEW.png' width={812} height={159} alt='Zirolu' className='w-full' priority />
+        </div>
+        <div className="w-[85%] absolute bottom-0 left-0 right-0 mx-auto flex flex-col justify-center items-center">
           <div className="w-full relative mx-auto flex justify-center items-center">
-            <Image src='/preview3.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
+            <Image src='/preview3NEW.png' width={840} height={1304} alt='Zirolu' className='w-full' priority />
           </div>
         </div>
       </div>
