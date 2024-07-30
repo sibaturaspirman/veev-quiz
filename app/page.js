@@ -186,7 +186,7 @@ export default function Home() {
                       name='q1'
                       value="A"
                       />
-                      <label htmlFor="q1" className='text-3xl'>A: By finding a queit spot to relax and unwind</label>
+                      <label htmlFor="q1" className='text-3xl'>A: By finding a quiet spot to relax and unwind</label>
                   </li>
                   <li onClick={jawabQ1B}>
                       <input
